@@ -1,0 +1,1392 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Grundlagen der MVC-Webentwicklung in Java: Ein praktischer Leitfaden">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/de-java-web-mvc-mai-2006/mvc-webanwendung-in-einer-3-schichten-architektur---beispiel-5-mysql.html">
+      
+      
+        <link rel="prev" href="mvc-webanwendung-in-einer-3-tier-architektur---beispiel-4-postgres.html">
+      
+      
+        <link rel="next" href="mvc-webanwendung-in-einer-3-tier-architektur---beispiel-6-sql-server-express.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>19. MVC-Webanwendung in einer 3-Schichten-Architektur – Beispiel 5, MySQL - Grundlagen der MVC-Webentwicklung in Java: Ein praktischer Leitfaden</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Grundlagen der MVC-Webentwicklung in Java: Ein praktischer Leitfaden";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#19-mvc-webanwendung-in-einer-3-schichten-architektur-beispiel-5-mysql" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Grundlagen der MVC-Webentwicklung in Java: Ein praktischer Leitfaden" class="md-header__button md-logo" aria-label="Grundlagen der MVC-Webentwicklung in Java: Ein praktischer Leitfaden" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Grundlagen der MVC-Webentwicklung in Java: Ein praktischer Leitfaden
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              19. MVC-Webanwendung in einer 3-Schichten-Architektur – Beispiel 5, MySQL
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Zum Dunkelmodus wechseln"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Zum Dunkelmodus wechseln" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Zum Hellmodus wechseln"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Zum Hellmodus wechseln" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/de-java-web-mvc-mai-2006" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Grundlagen der MVC-Webentwicklung in Java: Ein praktischer Leitfaden" class="md-nav__button md-logo" aria-label="Grundlagen der MVC-Webentwicklung in Java: Ein praktischer Leitfaden" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Grundlagen der MVC-Webentwicklung in Java: Ein praktischer Leitfaden
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/de-java-web-mvc-mai-2006" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Willkommen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="einfuhrung.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Einführung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="in-diesem-dokument-verwendete-tools.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. In diesem Dokument verwendete Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="grundlagen-der-webentwicklung-in-java.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Grundlagen der Webentwicklung in Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-entwicklung-model-view-controller.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. MVC-Entwicklung (Model–View–Controller)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-person---version-1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. MVC-Webanwendung [person] – Version 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-person---version-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. MVC-Webanwendung [person] – Version 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-person---version-3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. MVC-Webanwendung [person] – Version 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="die-jstl-tag-bibliothek.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Die JSTL-Tag-Bibliothek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-person---version-4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. MVC-Webanwendung [person] – Version 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-person---version-5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. MVC-Webanwendung [person] – Version 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-person---version-6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. MVC-Webanwendung [person] – Version 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-person---version-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. MVC-Webanwendung [person] – Version 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-person---version-8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. MVC-Webanwendung [person] – Version 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-in-einer-3-tier-architektur---beispiel-1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. MVC-Webanwendung in einer 3-Tier-Architektur – Beispiel 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spring-ioc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Spring IoC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-in-einer-3-tier-architektur---beispiel-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. MVC-Webanwendung in einer 3-Tier-Architektur – Beispiel 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-in-einer-3-tier-architektur---beispiel-3---firebird-dbms.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. MVC-Webanwendung in einer 3-Tier-Architektur – Beispiel 3 – Firebird-DBMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-in-einer-3-tier-architektur---beispiel-4-postgres.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. MVC-Webanwendung in einer 3-Tier-Architektur – Beispiel 4, Postgres
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. MVC-Webanwendung in einer 3-Schichten-Architektur – Beispiel 5, MySQL
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="mvc-webanwendung-in-einer-3-schichten-architektur---beispiel-5-mysql.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. MVC-Webanwendung in einer 3-Schichten-Architektur – Beispiel 5, MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#191-die-mysql-datenbank" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.1. Die MySQL-Datenbank
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#192-das-eclipse-projekt-fur-die-dao-und-service-schichten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.2. Das Eclipse-Projekt für die [DAO]- und [Service]-Schichten
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#193-die-dao-schicht" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.3. Die [dao]-Schicht
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#194-tests-fur-die-dao-und-service-schichten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.4. Tests für die [dao]- und [service]-Schichten
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#195-web-anwendungstests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.5. [Web]-Anwendungstests
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-in-einer-3-tier-architektur---beispiel-6-sql-server-express.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. MVC-Webanwendung in einer 3-Tier-Architektur – Beispiel 6, SQL Server Express
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fazit.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fazit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="der-code-aus-dem-artikel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Der Code aus dem Artikel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="19-mvc-webanwendung-in-einer-3-schichten-architektur-beispiel-5-mysql">19. <span style="color: #365f91">MVC-Webanwendung in einer 3-Schichten-Architektur – Beispiel 5, MySQL</span></h1>
+<h2 id="191-die-mysql-datenbank">19.1. <span style="color: #4f81bd">Die MySQL-Datenbank</span></h2>
+<p>In dieser Version speichern wir die Liste der Personen in einer MySQL 4.x-Datenbanktabelle. Wir haben das unter der URL [http://www.easyphp.org] verfügbare Paket [Apache – MySQL – PHP] verwendet. Die folgenden Screenshots stammen aus dem MySQL Manager Lite-Client [http://www.sqlmanager.net/fr/products/mysql/manager], einem kostenlosen Verwaltungsclient für das MySQL-DBMS.</p>
+<p>Die Datenbank trägt den Namen [dbpersonnes]. Sie enthält eine Tabelle namens [PERSONNES]:</p>
+<p><img src="images/10000000000000D8000000A0F9BD024D.png" width="151" height="112" style="width:4.001cm;height:2.963cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000D8000000A0F9BD024D.png" /></p>
+<p>Die Tabelle [PERSONNES] enthält die Liste der Personen, die von der Webanwendung verwaltet werden. Sie wurde mit den folgenden SQL-Anweisungen erstellt:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">`</span><span class="n">personnes</span><span class="o">`</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="o">`</span><span class="n">ID</span><span class="o">`</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">auto_increment</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span><span class="o">`</span><span class="k">VERSION</span><span class="o">`</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="o">`</span><span class="n">NOM</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">  </span><span class="o">`</span><span class="n">PRENOM</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">  </span><span class="o">`</span><span class="n">DATENAISSANCE</span><span class="o">`</span><span class="w"> </span><span class="nb">date</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;0000-00-00&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">  </span><span class="o">`</span><span class="n">MARIE</span><span class="o">`</span><span class="w"> </span><span class="n">tinyint</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">  </span><span class="o">`</span><span class="n">NBENFANTS</span><span class="o">`</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">  </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w">  </span><span class="p">(</span><span class="o">`</span><span class="n">ID</span><span class="o">`</span><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CHARSET</span><span class="o">=</span><span class="n">latin1</span>
+</code></pre></div></td></tr></table></div>
+<p>MySQL 4.x scheint weniger leistungsfähig zu sein als die beiden vorherigen DBMS. Ich konnte der Tabelle keine Einschränkungen (Prüfungen) hinzufügen.</p>
+<ul>
+  <li>Zeile 10: Die Tabelle muss vom Typ [InnoDB] sein und nicht [MyISAM], da dieser Transaktionen nicht unterstützt.
+  </li>
+  <li>Zeile 2: Der Primärschlüssel ist vom Typ <b>auto_increment</b>. Wenn eine Zeile ohne Wert für die ID-Spalte der Tabelle eingefügt wird, generiert MySQL automatisch eine Ganzzahl für diese Spalte. Dadurch müssen wir die Primärschlüssel nicht selbst generieren.
+  </li>
+</ul>
+
+<p>Die Tabelle [PERSONNES] könnte folgenden Inhalt haben:</p>
+<p><img src="images/1000000000000250000000B6397F308B.png" width="414" height="127" style="width:10.961cm;height:3.371cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000250000000B6397F308B.png" /></p>
+<p>Wir wissen, dass beim Einfügen eines [Person]-Objekts über unsere [DAO]-Schicht das Feld [id] dieses Objekts vor dem Einfügen den Wert -1 hat und danach einen anderen Wert als -1; dieser Wert ist der Primärschlüssel, der der neuen, in die Tabelle [PERSONNES] eingefügten Zeile zugewiesen wird. Schauen wir uns ein Beispiel an, um zu sehen, wie wir diesen Wert ermitteln können.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000558000000FD0C36C7CD.png" width="680" height="126" style="display:inline-block; margin:4px;width:17.997cm;height:3.328cm;" class="odt-zoomable" data-zoom-src="images/1000000000000558000000FD0C36C7CD.png" /></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000055300000162285DF619.png" width="680" height="177" style="display:inline-block; margin:4px;width:17.997cm;height:4.674cm;" class="odt-zoomable" data-zoom-src="images/100000000000055300000162285DF619.png" /></td></tr></table>
+
+<p><a id="dao-mysql-exemple-insertion"></a></p>
+<p>Die SQL-Anweisung </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">LAST_INSERT_ID</span><span class="p">()</span>
+</code></pre></div>
+<p>ermöglicht es uns, den zuletzt in das ID-Feld der Tabelle eingefügten Wert zu ermitteln. Sie muss <strong>nach dem Einfügen</strong> ausgeführt werden. Dies unterscheidet sich von den DBMS [Firebird] und [Postgres], bei denen wir den Primärschlüsselwert der hinzugefügten Person <strong>vor dem Einfügen</strong> abgefragt haben. Wir werden sie in der Datei [people-mysql.xml] verwenden, die die in der Datenbank ausgeführten SQL-Anweisungen enthält.</p>
+<h2 id="192-das-eclipse-projekt-fur-die-dao-und-service-schichten">19.2. <span style="color: #4f81bd">Das Eclipse-Projekt für die [DAO]- und [Service]-Schichten</span></h2>
+<p>Um die [DAO]- und [Service]-Schichten unserer Anwendung mit der MySQL-Datenbank zu entwickeln, verwenden wir das folgende Eclipse-Projekt [mvc-personnes-05]:</p>
+<p><img src="images/10000000000000DE00000063B6D4C070.png" width="156" height="70" style="width:4.129cm;height:1.842cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000DE00000063B6D4C070.png" /></p>
+<p>Das Projekt ist ein einfaches Java-Projekt, kein Tomcat-Webprojekt.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p>[src]-Verzeichnis</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+<p>Dieser Ordner enthält den Quellcode für die [dao]- und [service]-Schichten sowie die Konfigurationsdateien für diese beiden Schichten:</p>
+<p><img src="images/100000000000010D0000016380A19AC1.png" width="188" height="248" style="width:4.979cm;height:6.57cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000010D0000016380A19AC1.png" /></p>
+<p>Alle Dateien, deren Namen [mysql] enthalten, wurden möglicherweise für die Firebird- und Postgres-Versionen angepasst. Im Folgenden beschreiben wir diejenigen, die angepasst wurden.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p>Ordner [database]</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+<p>Dieser Ordner enthält das Skript zum Erstellen der MySQL-Datenbank für Benutzer:</p>
+<p><img src="images/1000000000000093000000214220834E.png" width="103" height="23" style="width:2.72cm;height:0.61cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000093000000214220834E.png" /></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span>
+<span class="normal"><a href="#__codelineno-2-29">29</a></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span>
+<span class="normal"><a href="#__codelineno-2-31">31</a></span>
+<span class="normal"><a href="#__codelineno-2-32">32</a></span>
+<span class="normal"><a href="#__codelineno-2-33">33</a></span>
+<span class="normal"><a href="#__codelineno-2-34">34</a></span>
+<span class="normal"><a href="#__codelineno-2-35">35</a></span>
+<span class="normal"><a href="#__codelineno-2-36">36</a></span>
+<span class="normal"><a href="#__codelineno-2-37">37</a></span>
+<span class="normal"><a href="#__codelineno-2-38">38</a></span>
+<span class="normal"><a href="#__codelineno-2-39">39</a></span>
+<span class="normal"><a href="#__codelineno-2-40">40</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="o">#</span><span class="w"> </span><span class="n">EMS</span><span class="w"> </span><span class="n">MySQL</span><span class="w"> </span><span class="n">Manager</span><span class="w"> </span><span class="n">Lite</span><span class="w"> </span><span class="mi">3</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">1</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="o">#</span><span class="w"> </span><span class="c1">---------------------------------------</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="o">#</span><span class="w"> </span><span class="k">Host</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="n">localhost</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="o">#</span><span class="w"> </span><span class="n">Port</span><span class="w">     </span><span class="p">:</span><span class="w"> </span><span class="mi">3306</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="o">#</span><span class="w"> </span><span class="k">Database</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">dbpersonnes</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="k">SET</span><span class="w"> </span><span class="n">FOREIGN_KEY_CHECKS</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="o">`</span><span class="n">dbpersonnes</span><span class="o">`</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">    </span><span class="nb">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="s1">&#39;latin1&#39;</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="k">COLLATE</span><span class="w"> </span><span class="s1">&#39;latin1_swedish_ci&#39;</span><span class="p">;</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="n">USE</span><span class="w"> </span><span class="o">`</span><span class="n">dbpersonnes</span><span class="o">`</span><span class="p">;</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="o">#</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="o">#</span><span class="w"> </span><span class="k">Structure</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="o">`</span><span class="n">personnes</span><span class="o">`</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="p">:</span><span class="w"> </span>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="o">#</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="o">`</span><span class="n">personnes</span><span class="o">`</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="w">  </span><span class="o">`</span><span class="n">ID</span><span class="o">`</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="n">auto_increment</span><span class="p">,</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="w">  </span><span class="o">`</span><span class="k">VERSION</span><span class="o">`</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">,</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="w">  </span><span class="o">`</span><span class="n">NOM</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="w">  </span><span class="o">`</span><span class="n">PRENOM</span><span class="o">`</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="w">  </span><span class="o">`</span><span class="n">DATENAISSANCE</span><span class="o">`</span><span class="w"> </span><span class="nb">date</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;0000-00-00&#39;</span><span class="p">,</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="w">  </span><span class="o">`</span><span class="n">MARIE</span><span class="o">`</span><span class="w"> </span><span class="n">tinyint</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">,</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="w">  </span><span class="o">`</span><span class="n">NBENFANTS</span><span class="o">`</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">,</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="w">  </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w">  </span><span class="p">(</span><span class="o">`</span><span class="n">ID</span><span class="o">`</span><span class="p">)</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CHARSET</span><span class="o">=</span><span class="n">latin1</span><span class="p">;</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a>
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a><span class="o">#</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32"></a><span class="o">#</span><span class="w"> </span><span class="k">Data</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="o">`</span><span class="n">personnes</span><span class="o">`</span><span class="w"> </span><span class="k">table</span><span class="w">  </span><span class="p">(</span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33"></a><span class="o">#</span>
+<a id="__codelineno-2-34" name="__codelineno-2-34"></a>
+<a id="__codelineno-2-35" name="__codelineno-2-35"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="o">`</span><span class="n">personnes</span><span class="o">`</span><span class="w"> </span><span class="p">(</span><span class="o">`</span><span class="n">ID</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="k">VERSION</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">NOM</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">PRENOM</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">DATENAISSANCE</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">MARIE</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="o">`</span><span class="n">NBENFANTS</span><span class="o">`</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span>
+<a id="__codelineno-2-36" name="__codelineno-2-36"></a><span class="w">  </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Major&#39;</span><span class="p">,</span><span class="s1">&#39;Joachim&#39;</span><span class="p">,</span><span class="s1">&#39;1984-01-13&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37"></a><span class="w">  </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Humbort&#39;</span><span class="p">,</span><span class="s1">&#39;Mélanie&#39;</span><span class="p">,</span><span class="s1">&#39;1985-01-12&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38"></a><span class="w">  </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Lemarchand&#39;</span><span class="p">,</span><span class="s1">&#39;Charles&#39;</span><span class="p">,</span><span class="s1">&#39;1986-01-01&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39"></a>
+<a id="__codelineno-2-40" name="__codelineno-2-40"></a><span class="k">COMMIT</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p>Ordner [lib]</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+<p>Dieses Verzeichnis enthält die von der Anwendung benötigten Dateien:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000014A000001C7FA46DB91.png" width="165" height="228" style="display:inline-block; margin:4px;width:4.366cm;height:6.02cm;" class="odt-zoomable" data-zoom-src="images/100000000000014A000001C7FA46DB91.png" /></td></tr></table>
+
+<p>Beachten Sie den vorhandenen JDBC-Treiber für das MySQL-DBMS. Alle diese Dateien sind Teil des <em>Klassenpfads</em> des Eclipse-Projekts.</p>
+<h2 id="193-die-dao-schicht">19.3. <span style="color: #4f81bd">Die [dao]-Schicht</span></h2>
+<p>Die [dao]-Schicht sieht wie folgt aus:</p>
+<p><img src="images/100000000000010D0000014756B49F60.png" width="188" height="229" style="width:4.979cm;height:6.054cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000010D0000014756B49F60.png" /></p>
+<p>Wir stellen hier nur die Änderungen gegenüber der [Firebird]-Version vor.</p>
+<p>Die Mapping-Datei [person-mysql.xml] sieht wie folgt aus:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000e1">&lt;?xml</span><span style="color:#000000"> </span><span style="color:#0000e1">version=</span><span style="color:#000080">&quot;1.0&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">encoding=</span><span style="color:#000080">&quot;UTF-8&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">?&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000e1">&lt;!DOCTYPE</span><span style="color:#000000"> </span><span style="color:#0000e1">sqlMap</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000e1">PUBLIC</span><span style="color:#000000"> </span><span style="color:#000080">&quot;-//iBATIS.com//DTD SQL Map 2.0//EN&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#000080">&quot;http://www.ibatis.com/dtd/sql-map-2.dtd&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;sqlMap&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- alias class [Person] --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000e1">&lt;typeAlias</span><span style="color:#000000"> </span><span style="color:#0000e1">alias=</span><span style="color:#000080">&quot;Personne.classe&quot;</span><span style="color:#000000"> </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">type=</span><span style="color:#000080">&quot;istia.st.mvc.personnes.entites.Personne&quot;</span><span style="color:#0000e1">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- mapping table [PERSONNES] - object [Person] --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000e1">&lt;resultMap</span><span style="color:#000000"> </span><span style="color:#0000e1">id=</span><span style="color:#000080">&quot;Personne.map&quot;</span><span style="color:#000000"> </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">class=</span><span style="color:#000080">&quot;istia.st.mvc.personnes.entites.Personne&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;result</span><span style="color:#000000"> </span><span style="color:#0000e1">property=</span><span style="color:#000080">&quot;id&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">column=</span><span style="color:#000080">&quot;ID&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;result</span><span style="color:#000000"> </span><span style="color:#0000e1">property=</span><span style="color:#000080">&quot;version&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">column=</span><span style="color:#000080">&quot;VERSION&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;result</span><span style="color:#000000"> </span><span style="color:#0000e1">property=</span><span style="color:#000080">&quot;nom&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">column=</span><span style="color:#000080">&quot;NOM&quot;</span><span style="color:#0000e1">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;result</span><span style="color:#000000"> </span><span style="color:#0000e1">property=</span><span style="color:#000080">&quot;prenom&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">column=</span><span style="color:#000080">&quot;PRENOM&quot;</span><span style="color:#0000e1">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;result</span><span style="color:#000000"> </span><span style="color:#0000e1">property=</span><span style="color:#000080">&quot;dateNaissance&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">column=</span><span style="color:#000080">&quot;DATENAISSANCE&quot;</span><span style="color:#0000e1">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;result</span><span style="color:#000000"> </span><span style="color:#0000e1">property=</span><span style="color:#000080">&quot;marie&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">column=</span><span style="color:#000080">&quot;MARIE&quot;</span><span style="color:#0000e1">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;result</span><span style="color:#000000"> </span><span style="color:#0000e1">property=</span><span style="color:#000080">&quot;nbEnfants&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">column=</span><span style="color:#000080">&quot;NBENFANTS&quot;</span><span style="color:#0000e1">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000e1">&lt;/resultMap&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- list of all persons --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000e1">&lt;select</span><span style="color:#000000"> </span><span style="color:#0000e1">id=</span><span style="color:#000080">&quot;Personne.getAll&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">resultMap=</span><span style="color:#000080">&quot;Personne.map&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">&gt;</span><span style="color:#000000"> select ID, VERSION, NOM, </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        PRENOM, DATENAISSANCE, MARIE, NBENFANTS FROM PERSONNES</span><span style="color:#0000e1">&lt;/select&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- get a specific person --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;select</span><span style="color:#000000"> </span><span style="color:#0000e1">id=</span><span style="color:#000080">&quot;Personne.getOne&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">resultMap=</span><span style="color:#000080">&quot;Personne.map&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">&gt;</span><span style="color:#000000">select ID, VERSION, NOM, </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        PRENOM, DATENAISSANCE, MARIE, NBENFANTS FROM PERSONNES WHERE ID=#value#</span><span style="color:#0000e1">&lt;/select&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- add a person --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000e1">&lt;insert</span><span style="color:#000000"> </span><span style="color:#0000e1">id=</span><span style="color:#000080">&quot;Personne.insertOne&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">parameterClass=</span><span style="color:#000080">&quot;Personne.classe&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        insert into </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        PERSONNES(VERSION, NOM, PRENOM, DATENAISSANCE, MARIE, NBENFANTS) </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        VALUES(#version#, #nom#, #prenom#, #dateNaissance#, #marie#, </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        #nbEnfants#) </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;selectKey</span><span style="color:#000000"> </span><span style="color:#0000e1">keyProperty=</span><span style="color:#000080">&quot;id&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            select LAST_INSERT_ID() as value</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;/selectKey&gt;</span><span style="color:#000000">         </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000e1">&lt;/insert&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- update a person --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000e1">&lt;update</span><span style="color:#000000"> </span><span style="color:#0000e1">id=</span><span style="color:#000080">&quot;Personne.updateOne&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">parameterClass=</span><span style="color:#000080">&quot;Personne.classe&quot;</span><span style="color:#0000e1">&gt;</span><span style="color:#000000"> update </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        PERSONNES set VERSION=#version#+1, NOM=#nom#, PRENOM=#prenom#, DATENAISSANCE=#dateNaissance#, </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        MARIE=#marie#, NBENFANTS=#nbEnfants# WHERE ID=#id# and </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        VERSION=#version#</span><span style="color:#0000e1">&lt;/update&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- delete a person --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000e1">&lt;delete</span><span style="color:#000000"> </span><span style="color:#0000e1">id=</span><span style="color:#000080">&quot;Personne.deleteOne&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">parameterClass=</span><span style="color:#000080">&quot;int&quot;</span><span style="color:#0000e1">&gt;</span><span style="color:#000000"> delete FROM PERSONNES WHERE </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        ID=#value# </span><span style="color:#0000e1">&lt;/delete&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- obtain the value of the primary key [id] of the last person inserted --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000e1">&lt;select</span><span style="color:#000000"> </span><span style="color:#0000e1">id=</span><span style="color:#000080">&quot;Personne.getNextId&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">resultClass=</span><span style="color:#000080">&quot;int&quot;</span><span style="color:#0000e1">&gt;</span><span style="color:#000000">select </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        LAST_INSERT_ID()</span><span style="color:#0000e1">&lt;/select&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/sqlMap&gt;</span></span>
+</code></pre></div>
+
+<p>Dies ist derselbe Inhalt wie in [people-firebird.xml], mit den folgenden geringfügigen Unterschieden:</p>
+<ul>
+  <li><span style="color: #000000">Die SQL-Anweisung „Person.insertOne“ wurde in den Zeilen 29–37 geändert:</span>
+  </li>
+  <li><span style="color: #000000">Die SQL-Einsatzanweisung wird vor der SELECT-Anweisung ausgeführt, die den Primärschlüsselwert der eingefügten Zeile abruft</span>
+  </li>
+  <li><span style="color: #000000">Die SQL-Einsatzanweisung enthält keinen Wert für die Spalte „ID“ in der Tabelle [PERSONNES]</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">Dies entspricht dem Einfügebeispiel, das wir in </span>Abschnitt<a href="#dao-mysql-exemple-insertion"><u><span style="color: #0563c1"> 19.1</span></u></a><span style="color: #000000"> besprochen haben.</span></p>
+<p><span style="color: #000000"><a id="pb-select-after-insert-mysql"></a>Beachten Sie, dass dies eine potenzielle Problemquelle zwischen parallel laufenden Threads sein kann. Stellen Sie sich zwei Threads vor, Th1 und Th2, die gleichzeitig eine Einfügung durchführen. Es sind insgesamt vier SQL-Anweisungen auszuführen. Angenommen, sie werden in der folgenden Reihenfolge ausgeführt:</span></p>
+<ol>
+  <li><span style="color: #000000">Einsetzen I1 durch Th1</span>
+  </li>
+  <li><span style="color: #000000">insert I2 von Th2</span>
+  </li>
+  <li><span style="color: #000000">select S1 von Th1</span>
+  </li>
+  <li><span style="color: #000000">select S2 von Th2</span>
+  </li>
+</ol>
+
+<p><span style="color: #000000">In Schritt 3 ruft Th1 den bei der letzten Einfügung generierten Primärschlüssel ab, bei dem es sich um den Schlüssel von Th2 und nicht um den eigenen handelt. Ich bin mir nicht sicher, ob die [insert]-Methode von iBATIS gegen dieses Szenario geschützt ist. Wir gehen davon aus, dass sie dies ordnungsgemäß handhabt. Wäre dies nicht der Fall, müssten wir die Implementierungsklasse [DaoImplCommon] aus der [dao]-Schicht in eine Klasse [DaoImplMySQL] ableiten, in der die [insertPersonne]-Methode synchronisiert würde. Dies würde das Problem jedoch nur für die Threads in unserer Anwendung lösen. Wenn es sich bei Th1 und Th2 im obigen Beispiel um Threads aus zwei verschiedenen Anwendungen handelt, müsste das Problem dann mithilfe von Transaktionen und einer geeigneten Isolationsstufe zwischen den Transaktionen gelöst werden. Die Stufe [serializable], bei der Transaktionen so ausgeführt werden, als würden sie sequenziell ablaufen, wäre hierfür geeignet.</span></p>
+<p><span style="color: #000000">Beachten Sie, dass dieses Problem bei den DBMS Firebird und Postgres nicht auftritt, da diese die SELECT-Anweisung vor der INSERT-Anweisung ausführen. Betrachten Sie beispielsweise die folgende Abfolge:</span></p>
+<ol>
+  <li><span style="color: #000000">select S1 from Th1</span>
+  </li>
+  <li><span style="color: #000000">SELECT S2 from Th2</span>
+  </li>
+  <li><span style="color: #000000">insert I1 from Th1</span>
+  </li>
+  <li><span style="color: #000000">insert I2 from Th2</span>
+  </li>
+</ol>
+
+<p><span style="color: #000000">In den Schritten 1 und 2 rufen Th1 und Th2 Primärschlüsselwerte aus demselben Generator ab. Dieser Vorgang ist normalerweise atomar, und Th1 und Th2 rufen zwei unterschiedliche Werte ab. Wäre der Vorgang nicht atomar und würden Th1 und Th2 zwei identische Werte abrufen, würde die in Schritt 4 von Th2 durchgeführte Einfügung aufgrund eines doppelten Primärschlüssels fehlschlagen. Dies ist ein vollständig behebbarer Fehler, und Th2 kann die Einfügung erneut versuchen.</span></p>
+<p><span style="color: #000000">Wir lassen die Operation „Personne.insertOne“ so, wie sie derzeit in der Datei [personnes-mysql.xml] steht, aber der Leser sollte sich bewusst sein, dass hier ein potenzielles Problem besteht.</span></p>
+<p><span style="color: #000000">Die Implementierungsklasse [DaoImplCommon] der [dao]-Schicht ist dieselbe wie in den beiden vorherigen Versionen.</span></p>
+<p><span style="color: #000000">Die Konfiguration der [dao]-Schicht wurde an das [MySQL]-DBMS angepasst. Daher sieht die Konfigurationsdatei [spring-config-test-dao-mysql.xml] wie folgt aus:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-xml">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000e1">&lt;?xml</span><span style="color:#000000"> </span><span style="color:#0000e1">version=</span><span style="color:#000080">&quot;1.0&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">encoding=</span><span style="color:#000080">&quot;ISO_8859-1&quot;</span><span style="color:#0000e1">?&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000e1">&lt;!DOCTYPE</span><span style="color:#000000"> </span><span style="color:#0000e1">beans</span><span style="color:#000000"> </span><span style="color:#0000e1">SYSTEM</span><span style="color:#000000"> </span><span style="color:#000080">&quot;http://www.springframework.org/dtd/spring-beans.dtd&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;beans&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- data source DBCP --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000e1">&lt;bean</span><span style="color:#000000"> </span><span style="color:#0000e1">id=</span><span style="color:#000080">&quot;dataSource&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">class=</span><span style="color:#000080">&quot;org.apache.commons.dbcp.BasicDataSource&quot;</span><span style="color:#000000"> </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">destroy-method=</span><span style="color:#000080">&quot;close&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;property</span><span style="color:#000000"> </span><span style="color:#0000e1">name=</span><span style="color:#000080">&quot;driverClassName&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000e1">&lt;value&gt;</span><span style="color:#000000">com.mysql.jdbc.Driver</span><span style="color:#0000e1">&lt;/value&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;/property&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;property</span><span style="color:#000000"> </span><span style="color:#0000e1">name=</span><span style="color:#000080">&quot;url&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000e1">&lt;value&gt;</span><span style="color:#000000">jdbc:mysql://localhost/dbpersonnes</span><span style="color:#0000e1">&lt;/value&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;/property&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;property</span><span style="color:#000000"> </span><span style="color:#0000e1">name=</span><span style="color:#000080">&quot;username&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000e1">&lt;value&gt;</span><span style="color:#000000">root</span><span style="color:#0000e1">&lt;/value&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;/property&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;property</span><span style="color:#000000"> </span><span style="color:#0000e1">name=</span><span style="color:#000080">&quot;password&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000e1">&lt;value&gt;&lt;/value&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;/property&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000e1">&lt;/bean&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- SqlMapCllient --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000e1">&lt;bean</span><span style="color:#000000"> </span><span style="color:#0000e1">id=</span><span style="color:#000080">&quot;sqlMapClient&quot;</span><span style="color:#000000"> </span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">class=</span><span style="color:#000080">&quot;org.springframework.orm.ibatis.SqlMapClientFactoryBean&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;property</span><span style="color:#000000"> </span><span style="color:#0000e1">name=</span><span style="color:#000080">&quot;dataSource&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000e1">&lt;ref</span><span style="color:#000000"> </span><span style="color:#0000e1">local=</span><span style="color:#000080">&quot;dataSource&quot;</span><span style="color:#0000e1">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;/property&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;property</span><span style="color:#000000"> </span><span style="color:#0000e1">name=</span><span style="color:#000080">&quot;configLocation&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000e1">&lt;value&gt;</span><span style="color:#000000">classpath:sql-map-config-mysql.xml</span><span style="color:#0000e1">&lt;/value&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;/property&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000e1">&lt;/bean&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000">&lt;!-- the [dao] layer access classes --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000e1">&lt;bean</span><span style="color:#000000"> </span><span style="color:#0000e1">id=</span><span style="color:#000080">&quot;dao&quot;</span><span style="color:#000000"> </span><span style="color:#0000e1">class=</span><span style="color:#000080">&quot;istia.st.mvc.personnes.dao.DaoImplCommon&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;property</span><span style="color:#000000"> </span><span style="color:#0000e1">name=</span><span style="color:#000080">&quot;sqlMapClient&quot;</span><span style="color:#0000e1">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000e1">&lt;ref</span><span style="color:#000000"> </span><span style="color:#0000e1">local=</span><span style="color:#000080">&quot;sqlMapClient&quot;</span><span style="color:#0000e1">/&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000e1">&lt;/property&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000e1">&lt;/bean&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/beans&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li><span style="color: #000000">Zeilen 5–19: Die [dataSource]-Bean verweist nun auf die [MySQL]-Datenbank [dbpersonnes], deren Administrator [root] ist und die kein Passwort hat. Der Leser sollte diese Konfiguration entsprechend seiner eigenen Umgebung anpassen.</span>
+  </li>
+  <li><span style="color: #000000">Zeile 31: Die Klasse [DaoImplCommon] ist die Implementierungsklasse für die [dao]-Schicht</span>
+  </li>
+</ul>
+
+<p><span style="color: #000000">Nachdem diese Änderungen vorgenommen wurden, können wir mit dem Testen fortfahren.</span></p>
+<h2 id="194-tests-fur-die-dao-und-service-schichten">19.4. <span style="color: #4f81bd">Tests für die [dao]- und [service]-Schichten</span></h2>
+<p><span style="color: #000000">Die Tests für die [dao]- und [service]-Schichten sind dieselben wie für die [Firebird]-Version. Die erzielten Ergebnisse lauten wie folgt:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000548000001C9173DFD39.png" width="676" height="229" style="display:inline-block; margin:4px;width:17.886cm;height:6.047cm;" class="odt-zoomable" data-zoom-src="images/1000000000000548000001C9173DFD39.png" /></td></tr></table>
+
+<p><span style="color: #000000">Wir sehen, dass die Tests mit der [DaoImplCommon]-Implementierung erfolgreich bestanden wurden. Wir müssen diese Klasse nicht ableiten, wie es beim [Firebird]-DBMS erforderlich war.</span></p>
+<h2 id="195-web-anwendungstests">19.5. <span style="color: #4f81bd">[Web]-Anwendungstests</span></h2>
+<p><span style="color: #000000">Um die Webanwendung mit dem [MySQL]-DBMS zu testen, erstellen wir ein Eclipse-Projekt [mvc-personnes-05B] auf ähnliche Weise wie beim Erstellen des Projekts [mvc-personnes-03B] mit der Firebird-Datenbank (siehe </span>Abschnitt<a href="#web-firebird"><u><span style="color: #0563c1"> 17.7</span></u></a><span style="color: #000000">).  Wie bei Postgres müssen wir jedoch die Archive [personnes-dao.jar] und [personnes-service.jar] nicht neu erstellen, da wir keine Klassen geändert haben.</span></p>
+<p><span style="color: #000000">Wir stellen das Webprojekt [mvc-personnes-05B] in Tomcat bereit:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001560000008E61AA1E0B.png" width="239" height="99" style="display:inline-block; margin:4px;width:6.331cm;height:2.628cm;" class="odt-zoomable" data-zoom-src="images/10000000000001560000008E61AA1E0B.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001360000005A8CC393A1.png" width="217" height="63" style="display:inline-block; margin:4px;width:5.74cm;height:1.667cm;" class="odt-zoomable" data-zoom-src="images/10000000000001360000005A8CC393A1.png" /></td></tr></table>
+
+<p><span style="color: #000000">Das MySQL-DBMS wird gestartet. Der Inhalt der Tabelle [PERSONNES] sieht dann wie folgt aus:</span></p>
+<p><img src="images/100000000000024B000000AD724E2BB8.png" width="411" height="121" style="width:10.871cm;height:3.203cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000024B000000AD724E2BB8.png" /></p>
+<p><span style="color: #000000">Anschließend wird Tomcat gestartet. Über einen Browser rufen wir die URL [http://localhost:8080/mvc-personnes-05B] auf:</span></p>
+<p><img src="images/10000000000002340000010ACDC03F1A.png" width="395" height="186" style="width:10.449cm;height:4.928cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002340000010ACDC03F1A.png" /></p>
+<p><span style="color: #000000">Wir fügen    über den Link [Hinzufügen] eine neue Person hinzu:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000019300000178981FF3E2.png" width="282" height="263" style="display:inline-block; margin:4px;width:7.459cm;height:6.959cm;" class="odt-zoomable" data-zoom-src="images/100000000000019300000178981FF3E2.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000022600000123D5B450B9.png" width="332" height="176" style="display:inline-block; margin:4px;width:8.789cm;height:4.65cm;" class="odt-zoomable" data-zoom-src="images/100000000000022600000123D5B450B9.png" /></td></tr></table>
+
+<p><span style="color: #000000">Wir überprüfen den Eintrag in der Datenbank:</span></p>
+<p><img src="images/100000000000024A000000BCE867BEA2.png" width="410" height="132" style="width:10.85cm;height:3.48cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000024A000000BCE867BEA2.png" /></p>
+<p><span style="color: #000000">Der Leser ist eingeladen, weitere Tests durchzuführen [Bearbeiten, Löschen].</span></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Dieses Tutorial, verfasst von <strong>Serge Tahé</strong>, wird der Öffentlichkeit unter den Bedingungen der
+<em>Creative Commons Namensnennung – Nicht kommerziell –
+Weitergabe unter gleichen Bedingungen 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

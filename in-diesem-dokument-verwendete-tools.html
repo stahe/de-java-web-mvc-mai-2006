@@ -1,0 +1,1632 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Grundlagen der MVC-Webentwicklung in Java: Ein praktischer Leitfaden">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/de-java-web-mvc-mai-2006/in-diesem-dokument-verwendete-tools.html">
+      
+      
+        <link rel="prev" href="einfuhrung.html">
+      
+      
+        <link rel="next" href="grundlagen-der-webentwicklung-in-java.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>2. In diesem Dokument verwendete Tools - Grundlagen der MVC-Webentwicklung in Java: Ein praktischer Leitfaden</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Grundlagen der MVC-Webentwicklung in Java: Ein praktischer Leitfaden";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-in-diesem-dokument-verwendete-tools" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Grundlagen der MVC-Webentwicklung in Java: Ein praktischer Leitfaden" class="md-header__button md-logo" aria-label="Grundlagen der MVC-Webentwicklung in Java: Ein praktischer Leitfaden" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Grundlagen der MVC-Webentwicklung in Java: Ein praktischer Leitfaden
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. In diesem Dokument verwendete Tools
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Zum Dunkelmodus wechseln"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Zum Dunkelmodus wechseln" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Zum Hellmodus wechseln"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Zum Hellmodus wechseln" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/de-java-web-mvc-mai-2006" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Grundlagen der MVC-Webentwicklung in Java: Ein praktischer Leitfaden" class="md-nav__button md-logo" aria-label="Grundlagen der MVC-Webentwicklung in Java: Ein praktischer Leitfaden" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Grundlagen der MVC-Webentwicklung in Java: Ein praktischer Leitfaden
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/de-java-web-mvc-mai-2006" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Willkommen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="einfuhrung.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Einführung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. In diesem Dokument verwendete Tools
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="in-diesem-dokument-verwendete-tools.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. In diesem Dokument verwendete Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-j-ava-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. J ava 1.5
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-der-tomcat-5-servlet-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Der Tomcat 5 Servlet-Container
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-bereitstellung-einer-webanwendung-auf-dem-tomcat-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Bereitstellung einer Webanwendung auf dem Tomcat-Server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3. Bereitstellung einer Webanwendung auf dem Tomcat-Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-bereitstellung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.1. Bereitstellung
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-tomcat-verwaltung" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.2. Tomcat-Verwaltung
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-verwaltung-bereitgestellter-webanwendungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.3. Verwaltung bereitgestellter Webanwendungen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#234-webanwendung-mit-einer-startseite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.4. Webanwendung mit einer Startseite
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-eclipse-installieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Eclipse installieren
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-tomcat-eclipse-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Tomcat – Eclipse-Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="grundlagen-der-webentwicklung-in-java.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Grundlagen der Webentwicklung in Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-entwicklung-model-view-controller.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. MVC-Entwicklung (Model–View–Controller)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-person---version-1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. MVC-Webanwendung [person] – Version 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-person---version-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. MVC-Webanwendung [person] – Version 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-person---version-3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. MVC-Webanwendung [person] – Version 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="die-jstl-tag-bibliothek.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Die JSTL-Tag-Bibliothek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-person---version-4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. MVC-Webanwendung [person] – Version 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-person---version-5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. MVC-Webanwendung [person] – Version 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-person---version-6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. MVC-Webanwendung [person] – Version 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-person---version-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. MVC-Webanwendung [person] – Version 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-person---version-8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. MVC-Webanwendung [person] – Version 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-in-einer-3-tier-architektur---beispiel-1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. MVC-Webanwendung in einer 3-Tier-Architektur – Beispiel 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="spring-ioc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Spring IoC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-in-einer-3-tier-architektur---beispiel-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. MVC-Webanwendung in einer 3-Tier-Architektur – Beispiel 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-in-einer-3-tier-architektur---beispiel-3---firebird-dbms.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. MVC-Webanwendung in einer 3-Tier-Architektur – Beispiel 3 – Firebird-DBMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-in-einer-3-tier-architektur---beispiel-4-postgres.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. MVC-Webanwendung in einer 3-Tier-Architektur – Beispiel 4, Postgres
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-in-einer-3-schichten-architektur---beispiel-5-mysql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. MVC-Webanwendung in einer 3-Schichten-Architektur – Beispiel 5, MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mvc-webanwendung-in-einer-3-tier-architektur---beispiel-6-sql-server-express.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. MVC-Webanwendung in einer 3-Tier-Architektur – Beispiel 6, SQL Server Express
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fazit.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Fazit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="der-code-aus-dem-artikel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Der Code aus dem Artikel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2-in-diesem-dokument-verwendete-tools">2. <span style="color: #365f91">In diesem Dokument verwendete Tools</span></h1>
+<p>In diesem Dokument verwenden wir die folgenden Tools:</p>
+<ul>
+  <li>ein Java 1.5 JDK
+  </li>
+  <li>den TOMCAT-Webserver (http://tomcat.apache.org/),
+  </li>
+  <li>die ECLIPSE-Entwicklungsumgebung (http://www.eclipse.org/) mit dem WTP-Plugin (Web Tools Package)
+  </li>
+  <li>einen Webbrowser (IE, Netscape, Mozilla Firefox, Opera usw.).
+  </li>
+</ul>
+
+<p>Dies sind kostenlose Tools. Generell können viele Open-Source-Tools in der Webentwicklung verwendet werden:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;" rowspan="2"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>JAVA-IDE
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>JBuilder Foundation
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">http://www.borland.com/jbuilder/foundation/index.html</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;" rowspan="2"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Java-Bibliotheken
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Struts
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">http://struts.apache.org/</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;" rowspan="6"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>DBMS
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>MySQL
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">http://www.mysql.com/</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;" rowspan="3"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">Servlet</span><span class="o">-</span><span class="nx">Container</span>
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Tomcat
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">http://tomcat.apache.org/</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;" rowspan="2"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Browser
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Netscape
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">http://www.netscape.com/</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<p><a id="jdk15"></a></p>
+<h2 id="21-j-ava-15">2.1. <span style="color: #4f81bd"><strong>J</strong> <strong>ava 1.5</strong></span></h2>
+<p>Der Tomcat 5.x-Servlet-Container benötigt eine Java 1.5-Virtual Machine. Sie müssen daher zunächst diese Java-Version installieren, die Sie auf der Website von Sun unter der URL [http://www.sun.com] -&gt; [http://java.sun.com/j2se/1.5.0/download.jsp] (Mai 2006) finden:</p>
+<p><img src="images/100000000000039400000129B8336477.png" width="639" height="207" style="width:16.91cm;height:5.482cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000039400000129B8336477.png" /></p>
+<p><strong>Schritt 2</strong>:</p>
+<p><img src="images/10000000000001760000005D61078DC6.png" width="262" height="65" style="width:6.93cm;height:1.723cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001760000005D61078DC6.png" /></p>
+<p><strong>Schritt 3</strong>:</p>
+<p>Führen Sie die JDK 1.5-Installation aus der heruntergeladenen Datei aus.</p>
+<p><a id="installtomcat55"></a></p>
+<h2 id="22-der-tomcat-5-servlet-container">2.2. <span style="color: #4f81bd">Der Tomcat 5 Servlet-Container</span></h2>
+<p>Um Servlets auszuführen, benötigen wir einen Servlet-Container. Hier stellen wir einen davon vor, Tomcat 5.x, verfügbar unter <strong>http://tomcat.apache.org/</strong>. Wir beschreiben die Schritte (Stand: Mai 2006) zur Installation. Falls bereits eine frühere Version von Tomcat installiert ist, sollten Sie diese am besten zuerst entfernen.</p>
+<p><img src="images/1000000000000170000001EE4FA2B0B3.png" width="256" height="344" style="width:6.78cm;height:9.102cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000170000001EE4FA2B0B3.png" /></p>
+<p>Um das Produkt herunterzuladen, folgen Sie dem obigen Link [Tomcat 5.x]:</p>
+<p><img src="images/1000000000000190000000EFB673D510.png" width="280" height="167" style="width:7.41cm;height:4.427cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000190000000EFB673D510.png" /></p>
+<p>Sie können die .exe-Datei für die Windows-Plattform herunterladen. Starten Sie nach dem Herunterladen die Tomcat-Installation:</p>
+<p>Klicken Sie auf [Weiter] -&gt;</p>
+<p><img src="images/10000000000001F400000189BC5401F7.png" width="350" height="275" style="width:9.26cm;height:7.278cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F400000189BC5401F7.png" /></p>
+<p>Akzeptieren Sie die Lizenzbedingungen -&gt;</p>
+<p><img src="images/10000000000001F5000001886142672D.png" width="351" height="274" style="width:9.28cm;height:7.26cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F5000001886142672D.png" /></p>
+<p>Klicken Sie auf [Weiter] -&gt;</p>
+<p><img src="images/10000000000001F20000018718E17B25.png" width="348" height="274" style="width:9.22cm;height:7.239cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F20000018718E17B25.png" /></p>
+<p>Übernehmen Sie das vorgeschlagene Installationsverzeichnis oder ändern Sie es über [Durchsuchen] -&gt;</p>
+<p><img src="images/10000000000001F4000001877F7F615A.png" width="350" height="274" style="width:9.26cm;height:7.241cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F4000001877F7F615A.png" /></p>
+<p>Legen Sie den Benutzernamen und das Passwort für den Tomcat-Serveradministrator fest. Hier haben wir [<em>admin / admin]</em> verwendet -&gt;</p>
+<p><img src="images/10000000000002BB00000221E12A58D0.png" width="350" height="273" style="width:9.248cm;height:7.211cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002BB00000221E12A58D0.png" /></p>
+<p>Tomcat 5.x benötigt JRE 1.5. Normalerweise sollte die auf Ihrem Rechner installierte Version automatisch erkannt werden. Der oben angegebene Pfad bezieht sich auf die in Abschnitt<a href="#jdk15"><u><span style="color: #0563c1"> 2.1</span></u></a> heruntergeladene JRE 1.5. Wird keine JRE gefunden, geben Sie deren Stammverzeichnis über die Schaltfläche [1] an. Klicken Sie anschließend auf die Schaltfläche [Installieren], um Tomcat 5.x zu installieren -&gt;</p>
+<p><img src="images/10000000000001F5000001883CA14231.png" width="351" height="274" style="width:9.28cm;height:7.26cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F5000001883CA14231.png" /></p>
+<p>Die Schaltfläche [Finish] schließt die Installation ab. Die Installation von Tomcat wird durch ein Symbol auf der rechten Seite der Windows-Taskleiste angezeigt:</p>
+<p><img src="images/100000000000007E0000004A2A00B5AB.png" width="101" height="59" style="width:2.671cm;height:1.57cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000007E0000004A2A00B5AB.png" /></p>
+<p>Ein Rechtsklick auf dieses Symbol ermöglicht Ihnen den Zugriff auf die Befehle zum Starten und Stoppen des Servers:</p>
+<p><img src="images/10000000000000A70000008A2D875879.png" width="133" height="110" style="width:3.53cm;height:2.917cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000A70000008A2D875879.png" /></p>
+<p>Wir verwenden die Option [Dienst beenden], um den Webserver jetzt anzuhalten:</p>
+<p><img src="images/100000000000004D0000004231AD0E16.png" width="62" height="53" style="width:1.63cm;height:1.397cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000004D0000004231AD0E16.png" /></p>
+<p>Beachten Sie die Änderung des Symbolstatus. Das Symbol kann aus der Taskleiste entfernt werden:</p>
+<p><img src="images/10000000000000920000008D81F67C2A.png" width="117" height="113" style="width:3.09cm;height:2.985cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000920000008D81F67C2A.png" /></p>
+<p>Tomcat wurde in dem vom Benutzer ausgewählten Ordner installiert, den wir nun als <strong>&lt;tomcat&gt;</strong> bezeichnen. Die Verzeichnisstruktur für die heruntergeladene Version Tomcat 5.5.17 sieht wie folgt aus:</p>
+<p><img src="images/1000000000000089000000AD7264C4B6.png" width="96" height="121" style="width:2.54cm;height:3.207cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000089000000AD7264C4B6.png" /></p>
+<p>Die Tomcat-Installation hat eine Reihe von Verknüpfungen zum [Start]-Menü hinzugefügt. Wir verwenden den unten stehenden Link [Monitor], um das Tomcat-Tool zum Stoppen und Starten zu starten:</p>
+<p><img src="images/100000000000021A000000AF3356D78B.png" width="376" height="122" style="width:9.961cm;height:3.24cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000021A000000AF3356D78B.png" /></p>
+<p>Anschließend sehen wir das zuvor gezeigte Symbol:</p>
+<p><img src="images/100000000000004D0000004231AD0E16.png" width="62" height="53" style="width:1.63cm;height:1.397cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000004D0000004231AD0E16.png" /></p>
+<p>Der Tomcat-Monitor kann durch Doppelklicken auf dieses Symbol gestartet werden:</p>
+<p><img src="images/100000000000019A00000190D41B038E.png" width="287" height="280" style="width:7.59cm;height:7.405cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019A00000190D41B038E.png" /></p>
+<p>Mit den Schaltflächen [Start – Stopp – Pause] – Neustart können wir den Server starten, stoppen und neu starten. Wir starten den Server, indem wir auf [Start] klicken, und geben dann in einem Browser die URL http://localhost:8080 ein. Es sollte eine Seite ähnlich der folgenden angezeigt werden:</p>
+<p><img src="images/10000000000003BD00000154E227E6C7.png" width="577" height="205" style="width:15.27cm;height:5.426cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003BD00000154E227E6C7.png" /></p>
+<p>Über die folgenden Links können Sie überprüfen, ob Tomcat korrekt installiert wurde:</p>
+<p><img src="images/10000000000000E100000084D63B5B07.png" width="158" height="92" style="width:4.17cm;height:2.447cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000E100000084D63B5B07.png" /></p>
+<p>Alle Links auf der Seite [http://localhost:8080] sind einen Blick wert, und der Leser wird dazu ermutigt, dies zu tun. Wir werden Gelegenheit haben, die Links zur Verwaltung der auf dem Server bereitgestellten Webanwendungen noch einmal aufzugreifen:</p>
+<p><img src="images/10000000000000E7000000889D7AD7E4.png" width="162" height="95" style="width:4.279cm;height:2.519cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000E7000000889D7AD7E4.png" /></p>
+<h2 id="23-bereitstellung-einer-webanwendung-auf-dem-tomcat-server">2.3. <span style="color: #4f81bd">Bereitstellung einer Webanwendung auf dem Tomcat-Server</span></h2>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p>Lektüre [<a href="https://stahe.github.io/de-servlets-java-juin-2002/"><u><span style="color: #0563c1">ref1</span></u></a>]: Kapitel 1, Kapitel 2: 2.3.1, 2.3.2, 2.3.3</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+
+<h3 id="231-bereitstellung">2.3.1. <span style="color: #4f81bd">Bereitstellung</span></h3>
+<p>Eine Webanwendung muss bestimmte Regeln befolgen, um in einem Servlet-Container bereitgestellt werden zu können. Sei &lt;webapp&gt; das Verzeichnis einer Webanwendung. Eine Webanwendung besteht aus:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Klassen
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">im Ordner &lt;webapp&gt;\WEB-INF\classes</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Java-Archiven
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">im Ordner &lt;webapp&gt;\WEB-INF\lib</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Ansichten, Ressourcen (.jsp, .html, ...)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">im Ordner &lt;webapp&gt; oder in Unterordnern</div></td></tr></table>
+
+<p>Die Webanwendung wird über eine XML-Datei konfiguriert: <strong>&lt;webapp&gt;\WEB-INF\web.xml</strong>.</p>
+<p>Erstellen wir die Webanwendung mit der folgenden Verzeichnisstruktur:</p>
+<p><img src="images/100000000000007D00000058C9BC9C24.png" width="87" height="61" style="width:2.311cm;height:1.626cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000007D00000058C9BC9C24.png" /></p>
+<p>Wir erstellen die oben genannte Verzeichnisstruktur mit dem Windows Explorer. Die Ordner [classes] und [lib] sind hier leer. Der Ordner [views] enthält eine statische HTML-Datei:</p>
+<p><img src="images/100000000000015900000057EB61EDD0.png" width="242" height="61" style="width:6.391cm;height:1.612cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015900000057EB61EDD0.png" /></p>
+<p>deren Inhalt wie folgt lautet:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Application exemple<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>      Application exemple active ....
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Wenn Sie diese Datei in einem Browser laden, erhalten Sie die folgende Seite:</p>
+<p><img src="images/10000000000002680000005FC7584CB0.png" width="431" height="67" style="width:11.411cm;height:1.76cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002680000005FC7584CB0.png" /></p>
+<p>Die vom Browser angezeigte URL zeigt, dass die Seite nicht von einem Webserver bereitgestellt, sondern direkt vom Browser geladen wurde. Wir möchten nun, dass sie über den Tomcat-Webserver verfügbar ist.</p>
+<p>Kehren wir zum Verzeichnisbaum &lt;tomcat&gt; zurück:</p>
+<p><img src="images/1000000000000089000000AD7264C4B6.png" width="96" height="121" style="width:2.54cm;height:3.207cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000089000000AD7264C4B6.png" /></p>
+<p>Webanwendungen, die auf dem Tomcat-Server bereitgestellt werden, werden mithilfe von XML-Dateien konfiguriert, die sich im Ordner [&lt;tomcat&gt;\conf\Catalina\localhost] befinden:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000C10000007A7B34EE12.png" width="135" height="85" style="display:inline-block; margin:4px;width:3.57cm;height:2.258cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C10000007A7B34EE12.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000BD000000565A469739.png" width="132" height="60" style="display:inline-block; margin:4px;width:3.5cm;height:1.593cm;" class="odt-zoomable" data-zoom-src="images/10000000000000BD000000565A469739.png" /></td></tr></table>
+
+<p>Diese XML-Dateien können manuell erstellt werden, da ihre Struktur einfach ist. Anstatt diesen Ansatz zu wählen, werden wir die von Tomcat bereitgestellten Web-Tools verwenden.</p>
+<h3 id="232-tomcat-verwaltung">2.3.2. <span style="color: #4f81bd">Tomcat-Verwaltung</span></h3>
+<p>Auf der Anmeldeseite http://localhost:8080 bietet der Server Links für die Verwaltung:</p>
+<p><img src="images/100000000000015000000128F26EF089.png" width="235" height="207" style="width:6.219cm;height:5.479cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015000000128F26EF089.png" /></p>
+<p>Über den Link [Tomcat-Verwaltung] können wir die Ressourcen konfigurieren, die Tomcat den darin bereitgestellten Webanwendungen zur Verfügung stellt, wie beispielsweise einen Datenbank-Verbindungspool. Folgen wir dem Link:</p>
+<p><img src="images/10000000000003010000005EDD6675E9.png" width="538" height="66" style="width:14.24cm;height:1.741cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003010000005EDD6675E9.png" /></p>
+<p>Die angezeigte Seite weist darauf hin, dass für die Verwaltung von Tomcat 5.x ein spezielles Paket namens „admin“ erforderlich ist. Kehren wir zur Tomcat-Website zurück:</p>
+<p><img src="images/1000000000000218000000A6D8B6858C.png" width="375" height="116" style="width:9.931cm;height:3.076cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000218000000A6D8B6858C.png" /></p>
+<p>Laden wir die ZIP-Datei mit der Bezeichnung [Web Application Administration] herunter und entpacken sie anschließend. Ihr Inhalt sieht wie folgt aus:</p>
+<p><img src="images/10000000000000CE0000008984E6427E.png" width="144" height="96" style="width:3.821cm;height:2.542cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000CE0000008984E6427E.png" /></p>
+<p>Der Ordner [admin] muss in den Ordner [&lt;tomcat&gt;\server\webapps] kopiert werden, wobei &lt;tomcat&gt; der Ordner ist, in dem Tomcat 5.x installiert wurde:</p>
+<p><img src="images/10000000000000C700000113FC8A4A63.png" width="139" height="192" style="width:3.679cm;height:5.084cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C700000113FC8A4A63.png" /></p>
+<p>Der Ordner [localhost] enthält eine Datei [admin.xml], die in den Ordner [&lt;tomcat&gt;\conf\Catalina\localhost] kopiert werden muss:</p>
+<p><img src="images/10000000000000AC000000678C531EE4.png" width="121" height="72" style="width:3.191cm;height:1.91cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000AC000000678C531EE4.png" /></p>
+<p>Beenden Sie Tomcat und starten Sie es neu, falls es bereits lief. Rufen Sie anschließend über einen Browser erneut die Anmeldeseite des Webservers auf:</p>
+<p><img src="images/100000000000014B000001244443D770.png" width="232" height="204" style="width:6.13cm;height:5.408cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014B000001244443D770.png" /></p>
+<p>Folgen Sie dem Link [Tomcat-Verwaltung]. Es wird eine Anmeldeseite angezeigt:</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="top" />
+<p><strong>Hinweis</strong>: Um die unten gezeigte Seite aufzurufen, musste ich zunächst die URL [http://localhost:8080/admin/index.jsp] manuell eingeben. Erst dann funktionierte der obige Link [Tomcat-Verwaltung]. Ich bin mir nicht sicher, ob dies ein Verfahrensfehler meinerseits war.</p>
+<hr style="border:0; border-top:0.99pt solid #000000; margin:0.75em 0;" data-odt-border="bottom" />
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000FB000000A0157EB243.png" width="176" height="112" style="display:inline-block; margin:4px;width:4.65cm;height:2.963cm;" class="odt-zoomable" data-zoom-src="images/10000000000000FB000000A0157EB243.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000E4000000A9EB2253F3.png" width="159" height="118" style="display:inline-block; margin:4px;width:4.219cm;height:3.127cm;" class="odt-zoomable" data-zoom-src="images/10000000000000E4000000A9EB2253F3.png" /></td></tr></table>
+
+<p>Hier müssen Sie die Informationen erneut eingeben, die Sie bei der Tomcat-Installation angegeben haben. In unserem Fall geben wir den Benutzernamen und das Passwort als <em>admin / admin</em> ein. Die Schaltfläche [Login] führt uns zur folgenden Seite:</p>
+<p><img src="images/10000000000000FC0000016F9FD0D308.png" width="177" height="257" style="width:4.671cm;height:6.803cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000FC0000016F9FD0D308.png" /></p>
+<p>Auf dieser Seite kann der Tomcat-Administrator</p>
+<ul>
+  <li>Datenquellen,
+  </li>
+  <li>die für den E-Mail-Versand erforderlichen Informationen (Mail-Sessions)
+  </li>
+  <li>Umgebungsdaten, auf die alle Anwendungen zugreifen können (Umgebungseinträge),
+  </li>
+  <li>Tomcat-Benutzer und -Administratoren zu verwalten (Benutzer),
+  </li>
+  <li>Verwaltung von Benutzergruppen (Gruppen),
+  </li>
+  <li>Rollen definieren (d. h. festlegen, was ein Benutzer tun darf und was nicht),
+  </li>
+  <li>die Eigenschaften der vom Server bereitgestellten Webanwendungen definieren (Catalina-Dienst)
+  </li>
+</ul>
+
+<p>Folgen wir dem obigen Link [Rollen]:</p>
+<p><img src="images/10000000000002A5000000F068F62971.png" width="474" height="168" style="width:12.539cm;height:4.445cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002A5000000F068F62971.png" /></p>
+<p>Eine Rolle ermöglicht es Ihnen, festzulegen, was ein Benutzer oder eine Gruppe von Benutzern tun darf und was nicht. Mit einer Rolle sind bestimmte Rechte verbunden. Jeder Benutzer ist einer oder mehreren Rollen zugeordnet und verfügt über die damit verbundenen Rechte. Die unten aufgeführte Rolle [manager] gewährt das Recht, in Tomcat bereitgestellte Webanwendungen zu verwalten (Bereitstellung, Start, Herunterfahren, Entladen). Wir erstellen einen [manager]-Benutzer und ordnen ihm die Rolle [manager] zu, damit er Tomcat-Anwendungen verwalten kann. Dazu folgen wir dem Link [Users] auf der Verwaltungsseite:</p>
+<p><img src="images/10000000000002A1000000FB4D9CAD58.png" width="471" height="176" style="width:12.46cm;height:4.648cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002A1000000FB4D9CAD58.png" /></p>
+<p>Wir sehen, dass bereits eine Reihe von Benutzern vorhanden ist. Wir verwenden die Option [Create New User], um einen neuen Benutzer anzulegen:</p>
+<p><img src="images/100000000000029200000188DE6BB90D.png" width="460" height="274" style="width:12.18cm;height:7.257cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000029200000188DE6BB90D.png" /></p>
+<p>Wir geben dem Benutzer <strong>„manager“</strong> das Passwort <strong>„manager“</strong> und weisen ihm die Rolle <strong>„manager“</strong> zu. Wir bestätigen diese Hinzufügung über die Schaltfläche [Speichern]. Der neue Benutzer erscheint in der Benutzerliste:</p>
+<p><img src="images/10000000000000EB000000FF634A5105.png" width="164" height="178" style="width:4.35cm;height:4.72cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000EB000000FF634A5105.png" /></p>
+<p>Dieser neue Benutzer wird der Datei [&lt;tomcat&gt;\conf\tomcat-users.xml] hinzugefügt:</p>
+<p><img src="images/10000000000000D8000000CCD62F072D.png" width="151" height="143" style="width:4.001cm;height:3.778cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000D8000000CCD62F072D.png" /></p>
+<p>deren Inhalt wie folgt lautet:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39;?&gt;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="nt">&lt;tomcat-users&gt;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">  </span><span class="nt">&lt;role</span><span class="w"> </span><span class="na">rolename=</span><span class="s">&quot;tomcat&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">  </span><span class="nt">&lt;role</span><span class="w"> </span><span class="na">rolename=</span><span class="s">&quot;role1&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">  </span><span class="nt">&lt;role</span><span class="w"> </span><span class="na">rolename=</span><span class="s">&quot;manager&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="w">  </span><span class="nt">&lt;role</span><span class="w"> </span><span class="na">rolename=</span><span class="s">&quot;admin&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">  </span><span class="nt">&lt;user</span><span class="w"> </span><span class="na">username=</span><span class="s">&quot;tomcat&quot;</span><span class="w"> </span><span class="na">password=</span><span class="s">&quot;tomcat&quot;</span><span class="w"> </span><span class="na">roles=</span><span class="s">&quot;tomcat&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="w">  </span><span class="nt">&lt;user</span><span class="w"> </span><span class="na">username=</span><span class="s">&quot;role1&quot;</span><span class="w"> </span><span class="na">password=</span><span class="s">&quot;tomcat&quot;</span><span class="w"> </span><span class="na">roles=</span><span class="s">&quot;role1&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="w">  </span><span class="nt">&lt;user</span><span class="w"> </span><span class="na">username=</span><span class="s">&quot;both&quot;</span><span class="w"> </span><span class="na">password=</span><span class="s">&quot;tomcat&quot;</span><span class="w"> </span><span class="na">roles=</span><span class="s">&quot;tomcat,role1&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="w">  </span><span class="nt">&lt;user</span><span class="w"> </span><span class="na">username=</span><span class="s">&quot;manager&quot;</span><span class="w"> </span><span class="na">password=</span><span class="s">&quot;manager&quot;</span><span class="w"> </span><span class="na">fullName=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">roles=</span><span class="s">&quot;manager&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="w">  </span><span class="nt">&lt;user</span><span class="w"> </span><span class="na">username=</span><span class="s">&quot;admin&quot;</span><span class="w"> </span><span class="na">password=</span><span class="s">&quot;admin&quot;</span><span class="w"> </span><span class="na">roles=</span><span class="s">&quot;admin,manager&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="nt">&lt;/tomcat-users&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>Zeile 10: der Benutzer [manager], der angelegt wurde
+  </li>
+</ul>
+
+<p>Eine weitere Möglichkeit, Benutzer hinzuzufügen, besteht darin, diese Datei direkt zu bearbeiten. Diese Vorgehensweise ist beispielsweise dann zu befolgen, wenn Sie das Passwort für <strong>das Admin-</strong> oder Manager-Konto vergessen haben.</p>
+<p><a id="tomcat-manager"></a></p>
+<h3 id="233-verwaltung-bereitgestellter-webanwendungen">2.3.3. <span style="color: #4f81bd">Verwaltung bereitgestellter Webanwendungen</span></h3>
+<p>Kehren wir nun zur Anmeldeseite [http://localhost:8080] zurück und folgen wir dem Link [Tomcat Manager]:</p>
+<p><img src="images/10000000000001530000012EC9798919.png" width="237" height="211" style="width:6.279cm;height:5.593cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001530000012EC9798919.png" /></p>
+<p>Daraufhin wird eine Authentifizierungsseite angezeigt. Wir melden uns als <em>manager / manager</em> an, d. h. mit dem Benutzer mit der Rolle [manager], den wir gerade erstellt haben. Tatsächlich kann nur ein Benutzer mit dieser Rolle diesen Link verwenden. In Zeile 11 von [tomcat-users.xml] sehen wir, dass der Benutzer [admin] ebenfalls die Rolle [manager] hat. Wir könnten daher auch die Anmeldedaten [admin / admin] verwenden.</p>
+<p><img src="images/10000000000001F8000000D67A462871.png" width="353" height="150" style="width:9.329cm;height:3.962cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F8000000D67A462871.png" /></p>
+<p>Wir gelangen auf eine Seite, auf der die derzeit in Tomcat bereitgestellten Anwendungen aufgelistet sind:</p>
+<p><img src="images/100000000000039F0000016C59E0553F.png" width="649" height="255" style="width:17.17cm;height:6.742cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000039F0000016C59E0553F.png" /></p>
+<p>Über die Formulare am Ende der Seite können wir eine neue Anwendung hinzufügen:</p>
+<p><img src="images/100000000000028200000139B2C04842.png" width="449" height="219" style="width:11.89cm;height:5.796cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000028200000139B2C04842.png" /></p>
+<p>Hier möchten wir die zuvor erstellte Beispielanwendung in Tomcat bereitstellen. Dazu gehen wir wie folgt vor:</p>
+<p><img src="images/100000000000026D000000AABF6A1FE1.png" width="435" height="119" style="width:11.501cm;height:3.149cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000026D000000AABF6A1FE1.png" /></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Kontextpfad
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">/example</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Der Name, der zur Identifizierung der bereitzustellenden Webanwendung verwendet wird</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Verzeichnis-URL
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">C:\data\2005-2006\eclipse\dvp-eclipse-tomcat\example</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">der Ordner der Webanwendung</div></td></tr></table>
+
+<p>Um die Datei [C:\data\2005-2006\eclipse\dvp-eclipse-tomcat\example\views\example.html] abzurufen, fordern wir die URL [http://localhost:8080/exemple/vues/exemple.html] von Tomcat an. Der <strong>Kontext</strong> wird daher verwendet, um den Stamm des Verzeichnisbaums der bereitgestellten Webanwendung zu benennen. Wir verwenden die Schaltfläche [Deploy], um die Anwendung bereitzustellen. Wenn alles gut geht, erhalten wir die folgende Antwortseite:</p>
+<p><img src="images/10000000000002D500000062596537D1.png" width="507" height="69" style="width:13.42cm;height:1.813cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D500000062596537D1.png" /></p>
+<p>und die neue Anwendung erscheint in der Liste der bereitgestellten Anwendungen:</p>
+<p><img src="images/10000000000003780000013C88A06F9A.png" width="533" height="190" style="width:14.101cm;height:5.018cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003780000013C88A06F9A.png" /></p>
+<p>Kommentieren wir die obige Zeile mit dem Kontext <strong>/example</strong> aus:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>/example
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Link zu http://localhost:8080/exemple</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Start
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">ermöglicht es Ihnen, die Anwendung zu starten</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Stopp
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">ermöglicht es Ihnen, die Anwendung zu beenden</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Neu laden
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">ermöglicht es Ihnen, die Anwendung neu zu laden. Dies ist beispielsweise erforderlich, wenn Sie bestimmte Klassen in der Anwendung hinzugefügt, geändert oder gelöscht haben.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Entfernen
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">entfernt den Kontext [/example]. Die Anwendung verschwindet aus der Liste der verfügbaren Anwendungen.</div></td></tr></table>
+
+<p>Nachdem unsere Anwendung <strong>/example</strong> nun bereitgestellt ist, können wir einige Tests durchführen. Wir rufen die Seite [example.html] über die URL [http://localhost:8080/exemple/vues/exemple.html] auf:</p>
+<p><img src="images/10000000000001DC000000642B4CDE8F.png" width="333" height="70" style="width:8.819cm;height:1.854cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001DC000000642B4CDE8F.png" /></p>
+<p>Eine weitere Möglichkeit, eine Webanwendung auf dem Tomcat-Server bereitzustellen, besteht darin, die über die Weboberfläche eingegebenen Informationen in einer [context].xml-Datei im Ordner [&lt;tomcat&gt;\conf\Catalina\localhost] anzugeben, wobei [context] der Name der Webanwendung ist.</p>
+<p>Kehren wir zur Tomcat-Verwaltungsoberfläche zurück:</p>
+<p><img src="images/100000000000037A000000B164E93909.png" width="623" height="124" style="width:16.48cm;height:3.277cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000037A000000B164E93909.png" /></p>
+<p>Entfernen wir die Anwendung [/example] über den Link [Undeploy]:</p>
+<p><img src="images/10000000000001C30000011A8AD7436E.png" width="316" height="197" style="width:8.35cm;height:5.221cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C30000011A8AD7436E.png" /></p>
+<p>Die Anwendung [/example] ist nicht mehr in der Liste der aktiven Anwendungen enthalten. Definieren wir nun die folgende Datei [example.xml]:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a>&lt;Context docBase=&quot;C:/data/2005-2006/eclipse/dvp-eclipse-tomcat/exemple&quot;&gt;
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a>&lt;/Context&gt;
+</code></pre></div></td></tr></table></div>
+<p>Die XML-Datei besteht aus einem einzigen &lt;<strong>Context</strong>&gt;-Tag, dessen docBase-Attribut den Ordner definiert, der die zu installierende Webanwendung enthält. Speichern wir diese Datei unter &lt;tomcat&gt;\conf\Catalina\localhost:</p>
+<p><img src="images/10000000000000AE000000794B6207F4.png" width="122" height="85" style="width:3.221cm;height:2.24cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000AE000000794B6207F4.png" /></p>
+<p>Stoppen und starten Sie Tomcat gegebenenfalls neu und zeigen Sie dann die Liste der aktiven Anwendungen über den Tomcat-Administrator an:</p>
+<p><img src="images/10000000000001C800000132175BFB5E.png" width="319" height="214" style="width:8.451cm;height:5.671cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C800000132175BFB5E.png" /></p>
+<p>Die Anwendung [/example] ist tatsächlich vorhanden. Rufen wir die URL in einem Browser auf:</p>
+<p>[http://localhost:8080/exemple/vues/exemple.html]:</p>
+<p>Eine auf diese Weise bereitgestellte Webanwendung kann wie zuvor über den Link [Undeploy] aus der Liste der bereitgestellten Anwendungen entfernt werden:</p>
+<p><img src="images/10000000000001D40000006870F2C34A.png" width="328" height="73" style="width:8.67cm;height:1.926cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D40000006870F2C34A.png" /></p>
+<p><img src="images/100000000000037A000000B164E93909.png" width="623" height="124" style="width:16.48cm;height:3.277cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000037A000000B164E93909.png" /></p>
+<p>In diesem Fall wird die Datei [example.xml] automatisch aus dem Ordner [&lt;tomcat&gt;\conf\Catalina\localhost] entfernt.</p>
+<p>Um eine Webanwendung in Tomcat bereitzustellen, können Sie schließlich auch ihren Kontext in der Datei [&lt;tomcat&gt;\conf\server.xml] definieren. Auf diesen Punkt werden wir hier nicht näher eingehen.</p>
+<p><a id="page-accueil"></a></p>
+<h3 id="234-webanwendung-mit-einer-startseite">2.3.4. <span style="color: #4f81bd">Webanwendung mit einer Startseite</span></h3>
+<p>Wenn wir die URL [http://localhost:8080/exemple/] aufrufen, erhalten wir folgende Antwort:</p>
+<p><img src="images/1000000000000191000000F3E3DA4EFD.png" width="281" height="170" style="width:7.43cm;height:4.501cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000191000000F3E3DA4EFD.png" /></p>
+<p>Dieses Verhalten hängt von der Konfiguration von Tomcat ab. In früheren Versionen hätten wir den Inhalt des physischen Verzeichnisses der Anwendung [/example] gesehen. Es ist gut, dass Tomcat dies nun standardmäßig verhindert.</p>
+<p>Wir können es so konfigurieren, dass bei Aufruf des Kontexts eine sogenannte Startseite angezeigt wird. Dazu erstellen wir eine [web.xml]-Datei und legen sie im Ordner &lt;example&gt;\WEB-INF ab, wobei &lt;example&gt; der physische Ordner der Webanwendung [/example] ist. Diese Datei sieht wie folgt aus:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-23-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-23-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-23-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-23-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-23-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-23-10">10</a></span>
+<span class="normal"><a href="#__codelineno-23-11">11</a></span>
+<span class="normal"><a href="#__codelineno-23-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="nt">&lt;web-app</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://java.sun.com/xml/ns/j2ee&quot;</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="w">    </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="w">    </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd&quot;</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="w">    </span><span class="na">version=</span><span class="s">&quot;2.4&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a>
+<a id="__codelineno-23-7" name="__codelineno-23-7"></a><span class="w">  </span><span class="nt">&lt;display-name&gt;</span>Application<span class="w"> </span>Exemple<span class="nt">&lt;/display-name&gt;</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="w">  </span><span class="nt">&lt;description&gt;</span>Application<span class="w"> </span>web<span class="w"> </span>minimale<span class="nt">&lt;/description&gt;</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9"></a><span class="w">    </span><span class="nt">&lt;welcome-file-list&gt;</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10"></a><span class="w">        </span><span class="nt">&lt;welcome-file&gt;</span>/vues/exemple.html<span class="nt">&lt;/welcome-file&gt;</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11"></a><span class="w">    </span><span class="nt">&lt;/welcome-file-list&gt;</span><span class="w">    </span>
+<a id="__codelineno-23-12" name="__codelineno-23-12"></a><span class="nt">&lt;/web-app&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>Zeilen 2–5: Das Stamm-Tag &lt;web-app&gt; mit Attributen, die aus der Datei [web.xml] der Tomcat-Anwendung [/admin] (&lt;tomcat&gt;/server/webapps/admin/WEB-INF/web.xml) kopiert und eingefügt wurden.
+  </li>
+  <li>Zeile 7: Der Anzeigename der Webanwendung. Dies ist ein frei wählbarer Name mit weniger Einschränkungen als der Name des Anwendungskontexts. Er kann beispielsweise Leerzeichen enthalten, was beim Kontextnamen nicht möglich ist. Dieser Name wird beispielsweise vom Tomcat-Administrator angezeigt:
+  </li>
+</ul>
+
+<p><img src="images/10000000000002B40000011E5A2894F7.png" width="346" height="143" style="width:9.155cm;height:3.784cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002B40000011E5A2894F7.png" /></p>
+<ul>
+  <li>Zeile 8: Beschreibung der Webanwendung. Dieser Text kann anschließend programmgesteuert abgerufen werden.
+  </li>
+  <li>Zeilen 9–11: Die Liste der Willkommensdateien. Das &lt;welcome-file-list&gt;-Tag wird verwendet, um die Liste der Ansichten zu definieren, die angezeigt werden sollen, wenn ein Client den Anwendungskontext anfordert. Es kann mehrere Ansichten geben. Die erste gefundene Ansicht wird dem Client präsentiert. Hier haben wir nur eine: [/views/example.html]. Wenn also ein Client die URL [/example] anfordert, wird ihm tatsächlich die URL [/example/views/example.html] bereitgestellt.
+  </li>
+</ul>
+
+<p>Speichern wir diese [web.xml]-Datei in &lt;example&gt;\WEB-INF:</p>
+<p><img src="images/10000000000000840000006B02778D21.png" width="105" height="85" style="width:2.79cm;height:2.261cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000840000006B02778D21.png" /></p>
+<p>Wenn Tomcat noch läuft, können Sie es über den Link [Reload] zwingen, die Webanwendung [/example] neu zu laden:</p>
+<p><img src="images/100000000000037800000050429BCF05.png" width="622" height="56" style="width:16.45cm;height:1.482cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000037800000050429BCF05.png" /></p>
+<p>Während dieses „Neuladevorgangs“ liest Tomcat die in [&lt;example&gt;\WEB-INF] enthaltene Datei [web.xml] erneut ein, sofern sie vorhanden ist. Dies ist hier der Fall. Falls Tomcat angehalten wurde, starten Sie es neu.</p>
+<p>Rufen Sie über einen Browser die URL [http://localhost:8080/exemple/] auf:</p>
+<p><img src="images/100000000000017F0000006436197B67.png" width="268" height="70" style="width:7.091cm;height:1.85cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017F0000006436197B67.png" /></p>
+<p>Der Host-Datei-Mechanismus hat funktioniert.</p>
+<h2 id="24-eclipse-installieren">2.4. <span style="color: #4f81bd">Eclipse installieren</span></h2>
+<p>Eclipse ist eine mehrsprachige Entwicklungsumgebung. Sie wird häufig in der Java-Entwicklung eingesetzt. Durch das Hinzufügen von Tools, sogenannten Plugins, lässt sich das Programm erweitern. Es gibt eine große Anzahl von Plugins, und genau das macht Eclipse so leistungsstark.</p>
+<p>Eclipse ist unter der URL [http://www.eclipse.org/downloads/] verfügbar:</p>
+<p><img src="images/10000000000002C0000000E0CF431884.png" width="493" height="157" style="width:13.04cm;height:4.149cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002C0000000E0CF431884.png" /></p>
+<p>Wir möchten Eclipse für die Java-Webentwicklung nutzen. Zu diesem Zweck stehen eine Reihe von Plugins zur Verfügung. Sie helfen bei der Überprüfung der Syntax von JSP-Seiten, XML-Dateien und mehr und ermöglichen es Ihnen, eine Webanwendung innerhalb von Eclipse zu testen. Wir werden eines dieser Plugins verwenden, <strong>das</strong> sogenannte <strong>Web Tools Package (WTP)</strong>. Die Standardprozedur für die Installation von Eclipse ist wie folgt:</p>
+<ol>
+  <li>Installieren Sie Eclipse
+  </li>
+  <li>Installieren Sie die benötigten Plugins
+  </li>
+</ol>
+
+<p>Das WTP-Plugin selbst benötigt weitere Plugins, was seine Installation recht komplex macht. Daher bietet die Eclipse-Website ein Paket an, das die Eclipse-Entwicklungsplattform und das WTP-Plugin zusammen mit allen anderen erforderlichen Plugins enthält. Dieses Paket ist auf der Eclipse-Website (Stand: Mai 2006) unter der URL [http://download.eclipse.org/webtools/downloads/] verfügbar:</p>
+<p><img src="images/1000000000000222000000CEEEA1B6D1.png" width="382" height="144" style="width:10.111cm;height:3.815cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000222000000CEEEA1B6D1.png" /></p>
+<p>Folgen Sie dem obigen Link [1.0.2]:</p>
+<p>Wir laden das [wtp]-Paket über den obigen Link herunter. Die resultierende ZIP-Datei enthält Folgendes:</p>
+<p><img src="images/1000000000000325000000B3217D7C34.png" width="564" height="125" style="width:14.91cm;height:3.314cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000325000000B3217D7C34.png" /></p>
+<p><img src="images/100000000000014D00000089692CD041.png" width="233" height="96" style="width:6.17cm;height:2.538cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014D00000089692CD041.png" /></p>
+<p>Entpacken Sie diesen Inhalt einfach in einen Ordner. Wir werden diesen Ordner von nun an als &lt;eclipse&gt; bezeichnen. Sein Inhalt ist wie folgt:</p>
+<p><img src="images/10000000000000D100000135B80A0BE7.png" width="105" height="155" style="width:2.766cm;height:4.089cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000D100000135B80A0BE7.png" /></p>
+<p>[eclipse.exe] ist die ausführbare Datei und [eclipse.ini] ist die zugehörige Konfigurationsdatei. Sehen wir uns den Inhalt der letzteren an:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
+<span class="normal"><a href="#__codelineno-24-2">2</a></span>
+<span class="normal"><a href="#__codelineno-24-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a>-vmargs
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a>-Xms40m
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a>-Xmx256m
+</code></pre></div></td></tr></table></div>
+<p>Diese Argumente werden beim Starten von Eclipse wie folgt verwendet:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>eclipse.exe -vmargs -Xms40m -Xmx256m
+</code></pre></div>
+<p>Sie können das gleiche Ergebnis wie mit der .ini-Datei erzielen, indem Sie eine Verknüpfung erstellen, die Eclipse mit denselben Argumenten startet. Lassen Sie uns diese erläutern:</p>
+<ul>
+  <li><b>-vmargs</b>: Gibt an, dass die folgenden Argumente für die Java Virtual Machine bestimmt sind, auf der Eclipse ausgeführt wird. Tatsächlich ist Eclipse eine Java-Anwendung.
+  </li>
+  <li><b>-Xms40m</b>: ?
+  </li>
+  <li><b>-Xmx256m</b>: Legt die Speichergröße in MB fest, die der Java Virtual Machine (JVM) zugewiesen wird, auf der Eclipse läuft. Standardmäßig beträgt diese Größe 256 MB, wie hier gezeigt. Wenn das System es zulässt, sind 512 MB vorzuziehen.
+  </li>
+</ul>
+
+<p>Diese Argumente werden an die JVM übergeben, die Eclipse ausführt. Die JVM wird durch eine [java.exe]- oder [javaw.exe]-Datei repräsentiert. Wo befindet sich diese Datei? Tatsächlich gibt es mehrere Möglichkeiten:</p>
+<ol>
+  <li>im PATH des Betriebssystems
+  </li>
+  <li>im Ordner &lt;JAVA_HOME&gt;/jre/bin, wobei JAVA_HOME eine Systemvariable ist, die den Stammordner eines JDK definiert.
+  </li>
+  <li>an einem Ort, der als Argument an Eclipse in der Form -vm &lt;Pfad&gt;\javaw.exe übergeben wird
+  </li>
+</ol>
+
+<p>Diese letzte Lösung ist vorzuziehen, da die beiden anderen von den Unwägbarkeiten späterer Anwendungsinstallationen abhängig sind, die entweder den OS-PATH oder die Variable JAVA_HOME ändern können.</p>
+<p>Wir erstellen daher die folgende Verknüpfung:</p>
+<p><img src="images/100000000000015D000000F3E7CBEB9D.png" width="244" height="170" style="width:6.459cm;height:4.496cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015D000000F3E7CBEB9D.png" /></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>Ziel
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">&lt;eclipse&gt;\eclipse.exe -vm &quot;C:\Program Files\Java\jre1.5.0_06\bin\javaw.exe&quot; -vmargs -Xms40m -Xmx512m</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>Starten in
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Eclipse-Installationsverzeichnis</div></td></tr></table>
+
+<p>Sobald das erledigt ist, starten Sie Eclipse über diese Verknüpfung. Es erscheint ein Startdialogfeld:</p>
+<p><img src="images/10000000000001B1000000EE017F9FA4.png" width="303" height="167" style="width:8.02cm;height:4.408cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B1000000EE017F9FA4.png" /></p>
+<p>Ein [Arbeitsbereich] ist ein Arbeitsbereich. Übernehmen wir die vorgeschlagenen Standardwerte. Standardmäßig werden Eclipse-Projekte in dem in diesem Dialogfeld angegebenen Ordner &lt;Arbeitsbereich&gt; erstellt. Es gibt eine Möglichkeit, dieses Verhalten zu überschreiben. Genau das werden wir systematisch tun. Daher ist die in diesem Dialogfeld gegebene Antwort nicht wichtig.</p>
+<p>Sobald dieser Schritt abgeschlossen ist, wird die Eclipse-Entwicklungsumgebung angezeigt:</p>
+<p><img src="images/100000000000014100000091A46A2596.png" width="225" height="101" style="width:5.941cm;height:2.685cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014100000091A46A2596.png" /></p>
+<p>Wir schließen die Ansicht [Willkommen] wie oben vorgeschlagen:</p>
+<p><img src="images/10000000000001BB000000A0D3E0E64C.png" width="310" height="112" style="width:8.2cm;height:2.962cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BB000000A0D3E0E64C.png" /></p>
+<p>Bevor wir ein Java-Projekt erstellen, konfigurieren wir Eclipse, um das JDK festzulegen, das für die Kompilierung von Java-Projekten verwendet werden soll. Dazu wählen wir die Option [Fenster / Einstellungen / Java / Installierte JREs]:</p>
+<p><img src="images/100000000000023F00000131E878E6BA.png" width="403" height="214" style="width:10.65cm;height:5.65cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000023F00000131E878E6BA.png" /></p>
+<p>Normalerweise sollte die JRE (Java Runtime Environment), die zum Starten von Eclipse selbst verwendet wird, in der Liste der JREs vorhanden sein. Dies ist in der Regel die einzige. Sie können JREs über die Schaltfläche [Hinzufügen] hinzufügen. Anschließend müssen Sie das Stammverzeichnis des JRE angeben. Die Schaltfläche [Suchen] startet eine Suche nach JREs auf der Festplatte. Dies ist eine gute Möglichkeit, den Überblick über die JREs zu behalten, die Sie installieren und dann bei einem Upgrade auf eine neuere Version vergessen haben, zu deinstallieren. Das oben markierte JRE ist dasjenige, das zum Kompilieren und Ausführen von Java-Projekten verwendet wird.</p>
+<p>Die in unseren Beispielen verwendete JRE ist die in Abschnitt<a href="#jdk15"><u><span style="color: #0563c1"> 2.1</span></u></a> installierte, die auch zum Starten von Eclipse verwendet wurde. Ein Doppelklick darauf öffnet ihre Eigenschaften:</p>
+<p><img src="images/10000000000001F400000094CFF7D00F.png" width="350" height="104" style="width:9.26cm;height:2.741cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F400000094CFF7D00F.png" /></p>
+<p>Erstellen wir nun ein Java-Projekt [Datei / Neu / Projekt]:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001FA0000005A44BC86CD.png" width="354" height="63" style="display:inline-block; margin:4px;width:9.37cm;height:1.667cm;" class="odt-zoomable" data-zoom-src="images/10000000000001FA0000005A44BC86CD.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000000F200000145272DC3F6.png" width="169" height="227" style="display:inline-block; margin:4px;width:4.48cm;height:6.017cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F200000145272DC3F6.png" /></td></tr></table>
+
+<p>Wählen Sie [Java-Projekt] und dann [Weiter] -&gt;</p>
+<p><img src="images/10000000000002CA00000172C0429BFF.png" width="357" height="185" style="width:9.446cm;height:4.895cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002CA00000172C0429BFF.png" /></p>
+<p>In [2] geben wir einen leeren Ordner an, in dem das Java-Projekt installiert werden soll. In [1] geben wir dem Projekt einen Namen. Es muss nicht nach seinem Ordner benannt werden, wie das obige Beispiel vermuten lassen könnte. Sobald dies erledigt ist, schließen wir den Erstellungsassistenten mit der Schaltfläche [Fertigstellen] ab. Dies bedeutet, dass wir die auf den folgenden Seiten des Assistenten vorgeschlagenen Standardwerte übernehmen.</p>
+<p>Wir haben nun ein Java-Projektgerüst:</p>
+<p><img src="images/10000000000000FF000000B838BB0DCE.png" width="178" height="129" style="width:4.72cm;height:3.406cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000FF000000B838BB0DCE.png" /></p>
+<p>Klicken Sie mit der rechten Maustaste auf das Projekt [test1], um eine Java-Klasse zu erstellen:</p>
+<p><img src="images/10000000000001EC00000098F9362CED.png" width="344" height="106" style="width:9.11cm;height:2.813cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001EC00000098F9362CED.png" /></p>
+<p><img src="images/10000000000002EC00000256F45BCA6B.png" width="374" height="299" style="width:9.895cm;height:7.911cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002EC00000256F45BCA6B.png" /></p>
+<ul>
+  <li>in [1] den Ordner, in dem die Klasse erstellt werden soll. Standardmäßig schlägt Eclipse den aktuellen Projektordner vor.
+  </li>
+  <li>in [2] das Paket, in dem die Klasse abgelegt wird
+  </li>
+  <li>in [3] den Namen der Klasse
+  </li>
+  <li>In [4] fordern wir an, dass die statische Methode [main] generiert wird
+  </li>
+</ul>
+
+<p>Wir bestätigen den Assistenten durch Klicken auf [Fertigstellen]. Das Projekt wird daraufhin um eine Klasse erweitert:</p>
+<p><img src="images/10000000000000FA0000007FE202980F.png" width="175" height="89" style="width:4.63cm;height:2.351cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000FA0000007FE202980F.png" /></p>
+<p>Eclipse hat das Klassenskelett generiert. Sie können darauf zugreifen, indem Sie oben auf [Test1.java] doppelklicken:</p>
+<p><img src="images/1000000000000183000000FB18D1EB70.png" width="271" height="176" style="width:7.17cm;height:4.65cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000183000000FB18D1EB70.png" /></p>
+<p>Wir ändern den obigen Code wie folgt:</p>
+<p><img src="images/1000000000000182000000A72DD0FDB4.png" width="309" height="134" style="width:8.17cm;height:3.535cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000182000000A72DD0FDB4.png" /></p>
+<p>Wir führen das Programm [Test1.java] aus: [Rechtsklick auf Test1.java -&gt; Ausführen als -&gt; Java-Anwendung] </p>
+<p><img src="images/1000000000000236000001DC862D21E9.png" width="396" height="333" style="width:10.479cm;height:8.812cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000236000001DC862D21E9.png" /></p>
+<p>Das Ergebnis der Ausführung wird im Fenster [Konsole] angezeigt:</p>
+<p><img src="images/10000000000002320000005BDE353695.png" width="393" height="64" style="width:10.41cm;height:1.686cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002320000005BDE353695.png" /></p>
+<p><a id="tomcat-eclipse"></a></p>
+<h2 id="25-tomcat-eclipse-integration">2.5. <span style="color: #4f81bd">Tomcat – Eclipse-Integration</span></h2>
+<p>Um mit Tomcat zu arbeiten und dabei in Eclipse zu bleiben, müssen wir diesen Server in der Eclipse-Konfiguration angeben. Dazu wählen wir die Option [Datei / Neu / Sonstiges]. Daraufhin erscheint der folgende Assistent:</p>
+<p><img src="images/10000000000000C7000000F4CA73BB15.png" width="139" height="170" style="width:3.679cm;height:4.51cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000C7000000F4CA73BB15.png" /></p>
+<p>Wir entscheiden uns dafür, einen neuen Server zu erstellen. Wir wählen das Symbol [Server] oben aus und klicken dann auf [Weiter]:</p>
+<p>Durch das Hinzufügen des Servers erscheint ein Ordner im Eclipse-Projekt-Explorer:</p>
+<p>Um Tomcat über Eclipse zu verwalten, rufen wir die Ansicht [Server] über die Option [Fenster -&gt; Ansicht anzeigen -&gt; Sonstige -&gt; Server] auf:</p>
+<p><img src="images/10000000000000FB0000009DD4B4489A.png" width="176" height="110" style="width:4.65cm;height:2.909cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000FB0000009DD4B4489A.png" /></p>
+<p><img src="images/10000000000001230000011168B562B8.png" width="204" height="191" style="width:5.39cm;height:5.057cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001230000011168B562B8.png" /></p>
+<p>Klicken Sie auf [OK]. Die Ansicht [Servers] wird nun angezeigt:</p>
+<p><img src="images/10000000000002310000005B1BD0BD52.png" width="393" height="64" style="width:10.389cm;height:1.685cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002310000005B1BD0BD52.png" /></p>
+<p>In dieser Ansicht werden alle registrierten Server angezeigt, in diesem Fall der Tomcat 5.5-Server, den wir gerade registriert haben. Ein Rechtsklick darauf öffnet die Befehle zum Starten, Stoppen und Neustarten des Servers:</p>
+<p><img src="images/10000000000001D4000000FF666264AC.png" width="328" height="179" style="width:8.67cm;height:4.724cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D4000000FF666264AC.png" /></p>
+<p>Oben starten wir den Server. Beim Start werden eine Reihe von Protokollen in die Ansicht [Konsole] geschrieben:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
+<span class="normal"><a href="#__codelineno-28-2">2</a></span>
+<span class="normal"><a href="#__codelineno-28-3">3</a></span>
+<span class="normal"><a href="#__codelineno-28-4">4</a></span>
+<span class="normal"><a href="#__codelineno-28-5">5</a></span>
+<span class="normal"><a href="#__codelineno-28-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a>11 mai 2006 15:31:16 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a>INFO: The Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jre1.5.0_06\bin;.;C:\WINDOWS\system32;...
+<a id="__codelineno-28-3" name="__codelineno-28-3"></a>11 mai 2006 15:31:16 org.apache.coyote.http11.Http11BaseProtocol init
+<a id="__codelineno-28-4" name="__codelineno-28-4"></a>INFO: Initialisation de Coyote HTTP/1.1 sur http-8080
+<a id="__codelineno-28-5" name="__codelineno-28-5"></a>...
+<a id="__codelineno-28-6" name="__codelineno-28-6"></a>INFO: Server startup in 1641 ms
+</code></pre></div></td></tr></table></div>
+<p>Das Verständnis dieser Protokolle ist etwas gewöhnungsbedürftig. Wir werden uns vorerst nicht näher damit befassen. Es ist jedoch wichtig zu überprüfen, ob sie keine Fehler beim Laden des Kontexts anzeigen. Tatsächlich versucht der Tomcat/Eclipse-Server beim Start, den Kontext der von ihm verwalteten Anwendungen zu laden. Das Laden des Kontexts einer Anwendung umfasst die Verarbeitung ihrer [web.xml]-Datei und das Laden einer oder mehrerer Klassen, die sie initialisieren. Dabei können verschiedene Arten von Fehlern auftreten:</p>
+<ul>
+  <li>Die Datei [web.xml] enthält einen Syntaxfehler. Dies ist der häufigste Fehler. Es wird empfohlen, ein Tool zu verwenden, das ein XML-Dokument während seiner Erstellung validieren kann.
+  </li>
+  <li>bestimmte zu ladende Klassen wurden nicht gefunden. Sie werden in [WEB-INF/classes] und [WEB-INF/lib] gesucht. Sie sollten generell das Vorhandensein der erforderlichen Klassen sowie die Schreibweise der in der Datei [web.xml] deklarierten Klassen überprüfen.
+  </li>
+</ul>
+
+<p>Der von Eclipse gestartete Server verfügt nicht über dieselbe Konfiguration wie der in Abschnitt<a href="#installtomcat55"><u><span style="color: #0563c1"> 2.2</span></u></a>, Seite<a href="#installtomcat55"><u><span style="color: #0563c1"> 5</span></u></a>, installierte. Um dies zu überprüfen, rufen Sie die URL [http://localhost:8080] über einen Browser auf:</p>
+<p><img src="images/100000000000015D000000FEB7A5B628.png" width="244" height="178" style="width:6.459cm;height:4.701cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015D000000FEB7A5B628.png" /></p>
+<p>Diese Antwort bedeutet nicht, dass der Server nicht funktioniert, sondern dass die angeforderte Ressource / nicht verfügbar ist. Bei dem in Eclipse integrierten Tomcat-Server handelt es sich bei diesen Ressourcen um Webprojekte. Darauf gehen wir später ein. Stoppen wir Tomcat vorerst:</p>
+<p><img src="images/10000000000002140000011F3F3C3A8F.png" width="372" height="201" style="width:9.85cm;height:5.315cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002140000011F3F3C3A8F.png" /></p>
+<p><a id="eclipse-tomcat-conftomcat"></a>Der bisherige Betriebsmodus kann geändert werden. Kehren wir zur Ansicht [Servers] zurück und doppelklicken wir auf den Tomcat-Server, um dessen Eigenschaften aufzurufen:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000012B0000005421B2C8B7.png" width="209" height="59" style="display:inline-block; margin:4px;width:5.54cm;height:1.556cm;" class="odt-zoomable" data-zoom-src="images/100000000000012B0000005421B2C8B7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000028C000001F20C548765.png" width="326" height="249" style="display:inline-block; margin:4px;width:8.625cm;height:6.588cm;" class="odt-zoomable" data-zoom-src="images/100000000000028C000001F20C548765.png" /></td></tr></table>
+
+<p>Das Kontrollkästchen [1] ist für das oben beschriebene Verhalten verantwortlich. Wenn es aktiviert ist, werden in Eclipse entwickelte Webanwendungen nicht in den Konfigurationsdateien des zugehörigen Tomcat-Servers, sondern in separaten Konfigurationsdateien deklariert. Infolgedessen sind die Standardanwendungen innerhalb des Tomcat-Servers – [admin] und [manager], zwei nützliche Anwendungen – nicht verfügbar. Deaktivieren wir also [1] und starten Tomcat neu:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001B40000007B9C70A7A5.png" width="305" height="86" style="display:inline-block; margin:4px;width:8.08cm;height:2.279cm;" class="odt-zoomable" data-zoom-src="images/10000000000001B40000007B9C70A7A5.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000001DE00000057E3109BE9.png" width="334" height="61" style="display:inline-block; margin:4px;width:8.849cm;height:1.61cm;" class="odt-zoomable" data-zoom-src="images/10000000000001DE00000057E3109BE9.png" /></td></tr></table>
+
+<p>Sobald dies erledigt ist, rufen wir die URL [http://localhost:8080] über einen Browser auf:</p>
+<p><img src="images/100000000000016F000001686E4F1413.png" width="257" height="252" style="width:6.8cm;height:6.669cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016F000001686E4F1413.png" /></p>
+<p>Wir sehen das in Abschnitt<a href="#tomcat-manager"><u><span style="color: #0563c1"> 2.3.3</span></u></a>, Seite<a href="#tomcat-manager"><u><span style="color: #0563c1"> 15</span></u></a>, beschriebene Verhalten.</p>
+<p>In unseren vorherigen Beispielen haben wir einen Browser außerhalb von Eclipse verwendet. Sie können auch einen Browser innerhalb von Eclipse verwenden:</p>
+<p><img src="images/100000000000017000000148CDAF2269.png" width="258" height="230" style="width:6.819cm;height:6.078cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017000000148CDAF2269.png" /></p>
+<p>Oben wählen wir den internen Browser aus. Um ihn aus Eclipse heraus zu starten, können Sie das folgende Symbol verwenden:</p>
+<p><img src="images/100000000000008E0000006852DC8D1C.png" width="99" height="73" style="width:2.63cm;height:1.926cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000008E0000006852DC8D1C.png" /></p>
+<p>Der tatsächlich gestartete Browser ist derjenige, der über die Option [Fenster -&gt; Webbrowser] ausgewählt wurde. Hier erhalten wir den internen Browser:</p>
+<p><img src="images/100000000000026C0000006E427D019C.png" width="310" height="55" style="width:8.19cm;height:1.453cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000026C0000006E427D019C.png" /></p>
+<p>Starten Sie bei Bedarf Tomcat aus Eclipse heraus und geben Sie die URL [http://localhost:8080] in [1] ein:</p>
+<p><img src="images/10000000000001A60000011A51DADE98.png" width="296" height="197" style="width:7.819cm;height:5.225cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A60000011A51DADE98.png" /></p>
+<p>Folgen Sie dem Link [Tomcat Manager]:</p>
+<p><img src="images/10000000000001440000012036F09775.png" width="227" height="202" style="width:6.001cm;height:5.334cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001440000012036F09775.png" /></p>
+<p>Sie werden aufgefordert, den [Benutzernamen/das Passwort] einzugeben, die für den Zugriff auf die [Manager]-Anwendung erforderlich sind. Entsprechend der zuvor eingerichteten Tomcat-Konfiguration können Sie [admin/admin] oder [manager/manager] eingeben. Anschließend wird eine Liste der bereitgestellten Anwendungen angezeigt:</p>
+<p><img src="images/10000000000002D10000008AE6C94924.png" width="505" height="97" style="width:13.351cm;height:2.556cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D10000008AE6C94924.png" /></p>
+<p>Wir sehen die von uns erstellte [person]-Anwendung. Der zugehörige [Reload]-Link wird später nützlich sein.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Dieses Tutorial, verfasst von <strong>Serge Tahé</strong>, wird der Öffentlichkeit unter den Bedingungen der
+<em>Creative Commons Namensnennung – Nicht kommerziell –
+Weitergabe unter gleichen Bedingungen 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
